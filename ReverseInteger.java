@@ -1,3 +1,5 @@
+Method - 1
+
 class Solution {
     public int reverse(int x) {
         int reversed = 0;
@@ -14,3 +16,25 @@ class Solution {
         return reversed;
     }
 }
+
+
+Method - 2
+
+class Solution {
+    public int reverse(int x) {
+        int num = Math.abs(x);
+        long reversed = 0;
+        int digit;
+        while (num > 0) {
+            digit = num % 10;
+            num = num / 10;
+            reversed = reversed * 10 + digit;
+        }
+         if (reversed > (Integer.MAX_VALUE)){
+                return 0; 
+            }
+        else
+        return x < 0 ? (int)-reversed : (int)reversed;
+    }
+}
+	
